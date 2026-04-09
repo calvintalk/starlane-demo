@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星冉股份有限公司 STARLANE Co., Ltd. | AI 伺服器散熱守護者</title>
+    <title>星冉股份有限公司 Starlane Ltd. Co. | AI 伺服器散熱守護者</title>
     <style>
         /* CSS 變數：深色科技風格 */
         :root {
@@ -19,75 +19,111 @@
         
         body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
 
-        /* 導覽列 */
+        /* --- 頂部導覽列與專屬 Logo 排版 --- */
         header {
             position: fixed; top: 0; width: 100%;
-            background-color: rgba(10, 11, 16, 0.9);
+            background-color: rgba(10, 11, 16, 0.95);
             backdrop-filter: blur(10px);
             display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 5%; z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; letter-spacing: 2px; }
-        .logo span { color: var(--accent-blue); }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 確保英文字置中 */
+            text-decoration: none;
+        }
+        .logo-zh { 
+            font-size: 1.3rem; 
+            font-weight: bold; 
+            color: #ffffff; 
+            letter-spacing: 2px; 
+        }
+        .logo-en { 
+            font-size: 0.75rem; 
+            color: var(--accent-cyan); 
+            letter-spacing: 4px; 
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
         nav ul { list-style: none; display: flex; gap: 2rem; }
-        nav a { color: var(--text-main); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        nav a { color: var(--text-main); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; font-weight: 500;}
         nav a:hover { color: var(--accent-cyan); }
         .lang-switch select {
-            background: transparent; color: #fff; border: 1px solid var(--accent-blue);
-            padding: 0.3rem; border-radius: 4px; outline: none; cursor: pointer;
+            background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--accent-blue);
+            padding: 0.4rem 0.8rem; border-radius: 4px; outline: none; cursor: pointer;
         }
         .lang-switch select option { background: var(--bg-dark); }
 
         /* 共同區塊設定 */
-        section { padding: 80px 5%; }
+        section { padding: 100px 5% 80px; }
         h2 { 
-            font-size: 2.5rem; margin-bottom: 2rem; text-align: center; 
+            font-size: 2.2rem; margin-bottom: 3rem; text-align: center; 
             background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
         }
 
-        /* Hero 區塊 */
+        /* --- 首頁主視覺 (Hero Section) --- */
+        /* ★ 圖片替換提示：如果要換成星冉自己的照片，請修改下方 url 裡面的網址 ★ */
         .hero {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background: linear-gradient(rgba(10,11,16,0.8), rgba(10,11,16,0.9)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000') center/cover;
+            background: linear-gradient(rgba(10,11,16,0.7), rgba(10,11,16,0.95)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000') center/cover no-repeat fixed;
             text-align: center;
         }
-        .hero h1 { font-size: 4rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.5rem; color: var(--text-muted); max-width: 800px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: #ffffff; letter-spacing: 2px;}
+        .hero p { font-size: 1.4rem; color: var(--accent-cyan); max-width: 800px; font-weight: 300; letter-spacing: 1px;}
 
         /* 卡片網格佈局 */
         .grid-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;
+            max-width: 1200px; margin: 0 auto;
         }
         .card {
-            background-color: var(--bg-card); padding: 2rem; border-radius: 8px;
-            border-top: 3px solid var(--accent-blue);
-            transition: transform 0.3s ease;
+            background-color: var(--bg-card); padding: 2.5rem; border-radius: 12px;
+            border-top: 4px solid var(--accent-blue);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .card:hover { transform: translateY(-5px); border-top-color: var(--accent-cyan); }
-        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #fff; }
+        .card:hover { transform: translateY(-10px); border-top-color: var(--accent-cyan); box-shadow: 0 15px 40px rgba(0,240,255,0.1); }
+        .card h3 { font-size: 1.4rem; margin-bottom: 1.2rem; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;}
+        .card p { color: var(--text-muted); margin-bottom: 1rem; }
         .card ul { margin-left: 1.5rem; color: var(--text-muted); }
+        .card ul li { margin-bottom: 0.8rem; }
+        .card ul li strong { color: #e2e8f0; }
 
         /* 聯絡資訊區塊 */
-        .contact-container { text-align: center; background-color: var(--bg-card); padding: 3rem; border-radius: 8px; }
-        .contact-info p { font-size: 1.1rem; margin: 0.5rem 0; }
+        .contact-container { 
+            max-width: 800px; margin: 0 auto;
+            text-align: center; background-color: var(--bg-card); padding: 4rem; border-radius: 12px; 
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .contact-container h3 { color: var(--accent-cyan); margin-bottom: 2rem; font-size: 1.5rem;}
+        .contact-info p { font-size: 1.1rem; margin: 1rem 0; color: var(--text-main);}
+        .contact-info span { color: var(--text-muted); width: 120px; display: inline-block; text-align: right; margin-right: 15px;}
         
         /* Footer */
-        footer { text-align: center; padding: 2rem; background-color: #000; border-top: 1px solid #222; }
+        footer { text-align: center; padding: 2rem; background-color: #050508; border-top: 1px solid #1a1a24; color: #64748b; font-size: 0.9rem;}
 
-        /* 響應式 */
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1rem; }
-            nav ul { flex-direction: column; align-items: center; gap: 1rem; }
-            .hero h1 { font-size: 2.5rem; }
+        /* 響應式微調 */
+        @media (max-width: 992px) {
+            header { flex-direction: column; gap: 1rem; padding: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .contact-info span { text-align: left; display: block; width: auto; margin-bottom: 5px; color: var(--accent-blue);}
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">STAR<span>LANE</span></div>
+        <a href="#" class="logo-container">
+            <div class="logo-zh">星冉股份有限公司</div>
+            <div class="logo-en">STARLANE</div>
+        </a>
         <nav>
             <ul>
                 <li><a href="#vision">公司定位與願景</a></li>
@@ -108,119 +144,117 @@
 
     <section class="hero">
         <h1>星冉股份有限公司</h1>
-        <p>全球頂尖 AI 高算力中心散熱效能的守護者 </p>
+        <p>全球頂尖 AI 高算力中心散熱效能的守護者</p>
     </section>
 
     <section id="vision">
-        <h2>01 | 公司定位與願景 Vision & Positioning [cite: 16]</h2>
+        <h2>01 | 公司定位與願景 Vision & Positioning</h2>
         <div class="grid-container">
             <div class="card">
                 <h3>我們的使命</h3>
-                <p>星冉股份有限公司是一家深耕於 AI 伺服器散熱設備與液冷系統的專業重工(Rework)與品質服務企業。 面對全球 AI 算力爆發帶來的熱管理挑戰，我們致力於為全球資料中心製造商提供卓越的解決方案。[cite: 30]</p>
+                <p>星冉股份有限公司是一家深耕於 AI 伺服器散熱設備與液冷系統的專業重工 (Rework) 與品質服務企業。面對全球 AI 算力爆發帶來的熱管理挑戰，我們致力於為全球資料中心製造商與伺服器供應商提供卓越的解決方案。</p>
             </div>
             <div class="card">
-                <h3>核心價值與佈局</h3>
-                <p>透過精密重工技術降低硬體損耗，協助客戶達成 PUE (能源使用效率) 優化與永續經營目標。[cite: 32, 33] 我們立足台灣，並陸續於馬來西亞、泰國、越南設有專業服務據點。[cite: 34]</p>
+                <h3>核心價值與全球佈局</h3>
+                <p>透過精密重工技術降低硬體損耗，協助客戶達成 PUE 優化與永續經營目標。我們立足台灣，並陸續於馬來西亞、泰國、越南設立專業服務據點，提供零時差的技術支援。</p>
             </div>
         </div>
     </section>
 
     <section id="core-tech">
-        <h2>02 | 核心技術優勢 Core Competencies [cite: 17]</h2>
+        <h2>02 | 核心技術優勢 Core Competencies</h2>
         <div class="grid-container">
             <div class="card">
-                <h3>精密液冷系統修復 [cite: 40]</h3>
+                <h3>精密液冷系統修復</h3>
                 <ul>
-                    <li>冷卻板 (Cold Plate) 校準：確保 GPU/CPU 熱傳導效率最大化。[cite: 41]</li>
-                    <li>快接頭 (QD) 與管路維護：提供高可靠度的防漏密封測試。[cite: 42]</li>
-                    <li>分流管 (Manifold) 優化：針對冷卻液分配不均進行校準。[cite: 43]</li>
+                    <li><strong>冷卻板 (Cold Plate) 校準：</strong>確保 GPU/CPU 熱傳導效率最大化。</li>
+                    <li><strong>快接頭 (QD) 與管路維護：</strong>提供高可靠度的防漏密封測試 (Leak Detection)。</li>
+                    <li><strong>分流管 (Manifold) 優化：</strong>針對冷卻液分配不均進行流體力學校準。</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>高階氣冷與相變散熱 [cite: 44]</h3>
+                <h3>高階氣冷與相變散熱</h3>
                 <ul>
-                    <li>3D VC (均熱板)與熱導管檢修：精準檢測真空度並修復受損鰭片。[cite: 45]</li>
+                    <li><strong>3D VC 與熱導管檢修：</strong>精準檢測真空度與相變介質效能，並修復受損鰭片 (Fins)。</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>嚴謹的品質測試 [cite: 46]</h3>
+                <h3>嚴謹的品質測試流程</h3>
                 <ul>
-                    <li>壓力與密封性測試：模擬高壓工作環境下的流體循環安全性。[cite: 47]</li>
-                    <li>熱阻分析測試：使用熱像儀與傳感器驗證散熱係數。[cite: 48]</li>
+                    <li><strong>壓力與密封性測試：</strong>模擬高壓工作環境下的流體循環安全性。</li>
+                    <li><strong>熱阻分析測試：</strong>使用熱像儀與傳感器驗證重工後的散熱係數 (Theta-ja)。</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="services">
-        <h2>03 | 服務鏈與業務項目 Service Offerings [cite: 18]</h2>
+        <h2>03 | 服務鏈與業務項目 Service Offerings</h2>
         <div class="grid-container">
             <div class="card">
-                <h3>產品檢測 </h3>
+                <h3>產品檢測 (Inspection)</h3>
                 <ul>
-                    <li>開箱全檢與功能測試 </li>
-                    <li>現場 RMA 判定 </li>
-                    <li>挑選偵測與複判 </li>
+                    <li>開箱全檢與功能測試</li>
+                    <li>現場 RMA 判定</li>
+                    <li>挑選偵測與複判</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>重工維修 </h3>
+                <h3>重工維修 (Rework)</h3>
                 <ul>
-                    <li>精密重工與維修 </li>
-                    <li>真空與二次包裝 </li>
-                    <li>組裝與預組裝服務 </li>
+                    <li>針對 ODM 出廠不良或運作中受損的液冷模組提供「組件級」修復，大幅降低更換新品成本。</li>
+                    <li>真空與二次包裝、組裝與預組裝服務。</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>外包與技術支持 </h3>
+                <h3>技術支持與品質保證</h3>
                 <ul>
-                    <li>提供長/短期駐地 FAE 工程師 </li>
-                    <li>SMT 標準解讀與不良分析 </li>
-                    <li>品質系統建立與顧問諮詢 </li>
+                    <li><strong>品質測試：</strong>流量與熱阻測試、X-Ray 內部結構檢查、高低溫熱循環模擬。</li>
+                    <li><strong>駐地支持：</strong>提供 AI 伺服器機櫃 (L10/L11) 的現地技術排障。</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="advantages">
-        <h2>04 | 核心競爭優勢 Strategic Advantage [cite: 19]</h2>
+        <h2>04 | 核心競爭優勢 Strategic Advantage</h2>
         <div class="grid-container">
             <div class="card">
-                <h3>快速響應與專業能力</h3>
+                <h3>極致效能與在地化響應</h3>
                 <ul>
-                    <li><strong>即時在地化響應：</strong> 秉持「客戶在哪，人員就在哪」的原則。[cite: 57]</li>
-                    <li><strong>快速週轉 (TAT)：</strong> 關鍵組件損壞提供 24-48 小時內的修復建議。[cite: 60]</li>
-                    <li><strong>AI 領先架構經驗：</strong> 深度了解 Blackwell 等新一代平台的嚴格要求。[cite: 62]</li>
+                    <li><strong>即時在地化：</strong>秉持「客戶在哪，人員就在哪」的原則，快速解決現場品質異常。</li>
+                    <li><strong>快速週轉 (TAT)：</strong>為關鍵零組件提供 24-48 小時內的高效修復與重工建議。</li>
+                    <li><strong>AI 領先架構經驗：</strong>深度了解新世代 AI 平台對於解熱能力的嚴格要求。</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>05 | 聯繫星冉 Contact Information [cite: 21]</h2>
+        <h2>05 | 聯繫星冉 Contact Information</h2>
         <div class="contact-container">
-            <h3>我們隨時準備好成為您最可靠的技術夥伴 [cite: 67]</h3>
+            <h3>我們隨時準備好成為您最可靠的技術夥伴</h3>
             <div class="contact-info">
-                <p><strong>聯絡人：</strong>陳先生 [cite: 69]</p>
-                <p><strong>手機：</strong>CN: +86-138-2356-1402 / TW: +886-937-832-182 [cite: 70]</p>
-                <p><strong>電郵：</strong>Calvinchen@starlane.com.tw [cite: 71]</p>
-                <p><strong>微信 / LINE：</strong>Calvintalk [cite: 72, 73]</p>
-                <p><strong>公司電話：</strong>+886-2-8792-9767 [cite: 74]</p>
-                <p><strong>地址：</strong>台北市內湖區民權東路六段 123 巷 14 號 6 樓之 2 [cite: 76]</p>
+                <p><span>聯絡人</span>陳先生</p>
+                <p><span>手機 (CN)</span>+86-138-2356-1402</p>
+                <p><span>手機 (TW)</span>+886-937-832-182</p>
+                <p><span>電郵</span>Calvinchen@starlane.com.tw</p>
+                <p><span>微信 / LINE</span>Calvintalk</p>
+                <p><span>公司電話</span>+886-2-8792-9767</p>
+                <p><span>地址</span>台北市內湖區民權東路六段 123 巷 14 號 6 樓之 2</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 星冉股份有限公司 STARLANE Co., Ltd. All Rights Reserved.</p>
+        <p>&copy; 2026 星冉股份有限公司 Starlane Ltd. Co. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // 簡易的語系切換提示邏輯
         function changeLang() {
             const lang = document.getElementById('language').value;
             if(lang === 'zh-CN') {
-                alert("即將切換至简体中文版本。 (後續可串接 i18n JSON 檔案)");
+                alert("即將切換至简体中文版本。 (後續可串接多語系資料檔)");
             } else if (lang === 'en') {
                 alert("Switching to English version. (Ready for i18n integration)");
             }
